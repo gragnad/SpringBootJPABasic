@@ -1,0 +1,37 @@
+- Basic
+find...By...
+read...By....
+query...By...
+get...By...
+count...By...
+
+ex)
+findByUserId(String userId)
+findByUserIdAndUserPw(String userId, String userPw)
+findByUserNoGreaterThan(Long userNo)
+
+- provide Key In Method Name
+And = sql and
+or = sql or
+Is, Equals = sql (=)
+Between = sql between
+LessThan = sql <
+LessThanEqual sql <=
+GreaterThan = sql >
+GreaterThanEqual = sql >=
+After = sql >
+Before = sql <
+isNull, Null = sql is null
+isNotNull, NotNull = sql not null
+Like = sql like
+NotLike = sql not like
+StartingWith = (parameter bound with appended %)
+EndingWith (parameter bound with prepended %)
+Containing (parameter bound wrapper in %)
+OrderBy = sql order by
+Not = sql not
+In = sql in()
+NotIn = sql not in()
+True = sql (= true)
+False = sql (=false)
+IgnoreCase = Upper lower Ignore
