@@ -26,7 +26,10 @@ public class Board {
     @Column(name = "content")
     private String content;
 
-    @JsonFormat(pattern = "yyyy-MM-dd")
+    @Column(name = "writer")
+    private String writer;
+
+    //@JsonFormat(pattern = "yyyy-MM-dd")
     @CreationTimestamp
     @Column(name = "reg_date")
     private LocalDateTime regDate;

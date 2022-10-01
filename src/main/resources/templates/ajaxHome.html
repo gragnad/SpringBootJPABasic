@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org"></html>
 <head>
     <title>HOME</title>
@@ -11,6 +12,26 @@
 
     });
 
+    function ajaxExecute(typeParam, urlParam, dataParam, succssFunc, erroFunc) {
+        $.ajax({
+            type: typeParam,
+            url : urlParam,
+            data : JSON.stringify(dataParam),
+            contentType: "application/json; charset=UTF-8",
+            succss : succssFunc,
+            error : erroFunc
+        });
+    }
+    function successFunction(data) {
+        alert("SUCCESS");
+    }
+
+    function errorFunc(xhr, textStatus, error) {
+        alert("code:" + xhr.status + "\n"
+         +"message : " + xhr.responseText + "\n"
+         + "error : " + error);
+    }  
+
     //목록조회
     function findList() {
 
@@ -23,7 +44,17 @@
 
     //등록
     function registerCustom() {
+        const titleVal = $('#title').val();
+        const contentVal = $('#content').val();
+        const writerVal = $('#writer').val();
 
+        var boardObject = {
+            title : titleVal,
+            content : contentVal,
+            writer : writerVal
+        }
+
+        ajaxExecute("POST", "/api/boards", boardObject, successFunction, errorFunc)
     }
 
     //삭제
@@ -40,5 +71,39 @@
     function resetInputVlaue() {
 
     }
+
+   
 </script>
+
+<body>
+    <h1>ajax home</h1>
+
+    <table>
+        <tr>
+            <td><label for="boardNo">boardNo</label></td>
+            <td><input type="text" name="boardNo" value="" id="boardNo"/></td>
+        </tr>
+        <tr>
+            <td><label for="title">title</label></td>
+            <td><input type="text" name="title" value="" id="title"/></td>
+        </tr>
+        <tr>
+            <td><label for="content">content</label></td>
+            <td><input type="text" name="content" value="" id="content"/></td>
+        </tr>
+        <tr>
+            <td><label for="writer">writer</label></td>
+            <td><input type="text" name="writer" value="" id="writer"/></td>
+        </tr>
+    </table>
+
+    <div>
+        <button id="listBtn" onclick="findList()">LIST</button>
+        <button id="readBtn" onclick="findDetail()">READ DETAIL</button>
+        <button id="registerBtn" onclick="registerCustom()">REGISTER</button>
+        <button id="deleteBtn" onclick="deleteCustom()">DELETE</button>
+        <button id="modifyBtn" onclick="modifyCustom()">MODIFY</button>
+    </div>
+
+</body>
 

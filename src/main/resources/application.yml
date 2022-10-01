@@ -1,5 +1,5 @@
 server:
-  port: 8081
+  # port: 8081
 
 #jdbc
 spring:
@@ -18,6 +18,9 @@ spring:
     show-sql: 'true'
     #database-platform:
     #database-platform:
+  jackson:
+    serialization:
+      fail-on-empty-beans: 'false'
 # data REST config
   data:
     rest:
