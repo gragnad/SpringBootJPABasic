@@ -16,11 +16,12 @@ spring:
     hibernate:
       dll-auto: update
     show-sql: 'true'
-    #database-platform:
+    #database-platform: org.hibernate.dialect.MySQL8InnoDBDialect
     #database-platform:
   jackson:
     serialization:
       fail-on-empty-beans: 'false'
+
 # data REST config
   data:
     rest:

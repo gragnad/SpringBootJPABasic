@@ -15,6 +15,8 @@ class JpaBasicApplicationTests {
 	@Autowired
 	MemberRepository memberRepository;
 
+
+
 	@Test
 	public void testRegister() {
 		Member member1 = new Member();
