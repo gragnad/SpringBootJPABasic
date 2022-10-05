@@ -1,8 +1,7 @@
 package com.nalstudio.JPA_BASIC;
 
-import com.nalstudio.JPA_BASIC.entities.Singer;
+import com.nalstudio.JPA_BASIC.domain.Singer;
 import com.nalstudio.JPA_BASIC.service.SingerService;
-import com.nalstudio.JPA_BASIC.service.SingerServiceImpl;
 import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

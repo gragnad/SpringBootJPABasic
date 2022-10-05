@@ -1,9 +1,6 @@
-package com.nalstudio.JPA_BASIC.entities;
+package com.nalstudio.JPA_BASIC.domain;
 
-import com.sun.xml.internal.ws.api.ha.StickyFeature;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 import javax.persistence.*;
 import java.util.HashSet;

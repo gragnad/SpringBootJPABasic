@@ -15,6 +15,10 @@ class JpaBasicApplicationTests {
 	@Autowired
 	MemberRepository memberRepository;
 
+	@Test
+	public void memberQuerySDL() {
+
+	}
 
 
 	@Test

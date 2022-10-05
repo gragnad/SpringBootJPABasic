@@ -1,9 +1,6 @@
 package com.nalstudio.JPA_BASIC.domain;
 
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
@@ -19,6 +16,7 @@ import java.util.List;
 @EqualsAndHashCode(of="groupCode")
 public class CodeGroup {
     @Id
+    @Column(name = "group_code")
     private String groupCode;
 
     private String groupName;
@@ -31,7 +29,6 @@ public class CodeGroup {
     private LocalDateTime updDate;
 
     @OneToMany(mappedBy = "codeGroup", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    @JoinColumn(name = "group_code")
     private List<CodeDetail> codeDetails;
 
     //연관관계 편의 메서드

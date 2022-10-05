@@ -1,6 +1,7 @@
 package com.nalstudio.JPA_BASIC.repository;
 
 import com.nalstudio.JPA_BASIC.domain.Member;
+import com.querydsl.jpa.impl.JPAQueryFactory;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.Modifying;
@@ -8,6 +9,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
 
+import javax.persistence.EntityManager;
 import java.util.Collection;
 import java.util.List;
 
@@ -19,7 +21,6 @@ import java.util.List;
  * Native SQL : Direct Use SQL From JPA
  */
 public interface MemberRepository extends CrudRepository<Member, Long>{
-
     //JPQL=============================================
     @Query("SELECT m FROM Member m WHERE m.userId=?1")
     public List<Member> getListWhereUserId(String userId);

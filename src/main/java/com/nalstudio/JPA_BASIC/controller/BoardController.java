@@ -26,4 +26,6 @@ public class BoardController {
         log.info(board.toString());
         boardRepository.save(board);
     }
+
+
 }

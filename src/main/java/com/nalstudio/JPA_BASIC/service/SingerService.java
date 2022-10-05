@@ -1,7 +1,6 @@
 package com.nalstudio.JPA_BASIC.service;
 
-import com.nalstudio.JPA_BASIC.entities.Singer;
-import org.springframework.data.jpa.repository.JpaRepository;
+import com.nalstudio.JPA_BASIC.domain.Singer;
 
 import java.util.List;
 

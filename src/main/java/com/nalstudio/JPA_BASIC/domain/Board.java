@@ -1,9 +1,7 @@
 package com.nalstudio.JPA_BASIC.domain;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
@@ -20,13 +18,13 @@ public class Board {
     @Column(name = "board_no")
     private Long boardNo;
 
-    @Column(name = "title")
+    @Column(length = 50,name = "title")
     private String title;
 
-    @Column(name = "content")
+    @Column(length = 50, name = "content")
     private String content;
 
-    @Column(name = "writer")
+    @Column(length = 50, name = "writer")
     private String writer;
 
     //@JsonFormat(pattern = "yyyy-MM-dd")

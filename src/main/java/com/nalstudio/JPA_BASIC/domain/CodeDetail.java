@@ -1,9 +1,6 @@
 package com.nalstudio.JPA_BASIC.domain;
 
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
@@ -32,7 +29,7 @@ public class CodeDetail {
     @UpdateTimestamp
     private LocalDateTime updDate;
 
-    @ManyToOne
-    @JoinColumn(name = "group_code")
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "group_code", insertable = false, updatable = false)
     private CodeGroup codeGroup;
 }

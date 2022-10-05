@@ -1,6 +1,6 @@
 package com.nalstudio.JPA_BASIC.service;
 
-import com.nalstudio.JPA_BASIC.entities.Singer;
+import com.nalstudio.JPA_BASIC.domain.Singer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Repository;

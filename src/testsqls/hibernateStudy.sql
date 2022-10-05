@@ -33,3 +33,44 @@ CREATE TABLE jpatest.SINGER_INSTRUMENT(
     REFERENCES INSTRUMENT (INSTRUMENT_ID)
 );
 
+CREATE TABLE `code_group` (
+  `GROUP_CODE` varchar(50) NOT NULL,
+  `GROUP_NAME` varchar(60) DEFAULT NULL,
+  `USE_YN` varchar(1) DEFAULT 'Y',
+  `REG_DATE` date DEFAULT NULL,
+  `UPD_DATE` date DEFAULT NULL,
+  PRIMARY KEY (`GROUP_CODE`)
+);
+
+CREATE TABLE jpatest.code_detail(
+CODE_DETAIL_NO INT NOT NULL AUTO_INCREMENT
+, GROUP_CODE varchar(50)
+, CODE_VALUE varchar(50)
+, CODE_NAME VARCHAR(50)
+, SORT_SEQ INT
+, USE_YN VARCHAR(1) DEFAULT 'Y'
+, REG_DATE DATE
+, UPD_DATE DATE
+, PRIMARY KEY (CODE_DETAIL_NO)
+, FOREIGN KEY (GROUP_CODE) REFERENCES code_group (GROUP_CODE));
+
+
+CREATE TABLE `jpatest`.`member` (
+  `user_no` INT NOT NULL,
+  `user_id` VARCHAR(255) NULL,
+  `user_pw` VARCHAR(255) NULL,
+  `user_name` VARCHAR(255) NULL,
+  `gender` VARCHAR(255) NULL,
+  `join_date` DATETIME NULL,
+  `reg_date` DATETIME NULL,
+  `upd_date` DATETIME NULL,
+  PRIMARY KEY (`user_no`));
+
+  CREATE TABLE `board` (
+    `board_no` int NOT NULL,
+    `title` varchar(255) DEFAULT NULL,
+    `content` varchar(255) DEFAULT NULL,
+    `writer` varchar(255) DEFAULT NULL,
+    `reg_date` datetime DEFAULT NULL,
+    PRIMARY KEY (`board_no`)
+  );
